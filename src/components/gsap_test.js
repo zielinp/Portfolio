@@ -28,6 +28,25 @@ const Frame2 = styled.div`
   background-position-y: bottom;
   margin-top: -100vh;
 `
+const MainText = styled.div`
+  color: #e5e5e5;
+  font-size: 4rem;
+  position: absolute;
+  top: calc(50vh - 4rem);
+  width: 100%;
+  text-align: center;
+  p {
+    font-size: 2rem;
+    color: #e5e5e5;
+    margin: 0;
+  }
+`
+const PageContainer = styled.div`
+  /* display: "flex";
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black; */
+`
 
 function GSAPComponent(props) {
   const frame = React.createRef()
@@ -47,11 +66,21 @@ function GSAPComponent(props) {
       yPercent: -50,
       scale: 5,
       opacity: 0,
-    }).to(
+    })
+    tl.to(
       frame2.current,
       3,
       { xPercent: 50, yPercent: 50, scale: 5, opacity: 0 },
-      "-=3"
+      0
+    )
+    tl.to(
+      title.current,
+      3,
+      {
+        opacity: 0,
+        scale: 3,
+      },
+      0
     )
 
     ScrollTrigger.create({
@@ -63,30 +92,20 @@ function GSAPComponent(props) {
       pin: true,
       anticipatePin: 1,
     })
-  }, [frame, frame2, d])
+  }, [frame, frame2, d, title])
 
   return (
     <>
-      <div ref={d}>
+      <PageContainer ref={d}>
         <Frame ref={frame}></Frame>
         <Frame2 ref={frame2}></Frame2>
-      </div>
+        <MainText ref={title}>
+          Hermiona Granger
+          <p>Frontend Developer</p>
+        </MainText>
+      </PageContainer>
     </>
   )
 }
 
 export default GSAPComponent
-
-// function GSAPComponent(props) {
-//   const header = React.createRef()
-
-//   useEffect(() => {
-//     gsap.to(header.current, { color: "#8c0", duration: 6 })
-//   }, [header])
-
-//   return (
-//     <>
-//       <h1 ref={header}>Hello GSAP</h1>
-//     </>
-//   )
-// }
