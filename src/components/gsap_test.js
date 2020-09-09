@@ -14,6 +14,7 @@ const Frame = styled.div`
   background-image: url(${frame});
   background-size: contain;
   background-repeat: no-repeat;
+  /* background-color: blue; */
   background-position-x: left;
 `
 
@@ -26,6 +27,7 @@ const Frame2 = styled.div`
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: bottom;
+  /* background-color: #87aac1; */
   margin-top: -100vh;
 `
 const MainText = styled.div`
@@ -87,10 +89,10 @@ function GSAPComponent(props) {
       animation: tl,
       trigger: d.current,
       start: "top top",
-      end: "+=2000",
+      end: "+=2500",
       scrub: true,
       pin: true,
-      anticipatePin: 1,
+      anticipatePin: 0,
     })
   }, [frame, frame2, d, title])
 

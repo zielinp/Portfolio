@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     --textInput: hsl(0, 0%, 52%);
     /* background-color: var(--bg); */
     background-color: #87AAC1;
+    /* background-color: yellow; */
     /* background-image: url(${tlo}); */
     background-size:contain;
     background-repeat: no-repeat;

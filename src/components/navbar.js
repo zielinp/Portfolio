@@ -13,7 +13,7 @@ const StyledNav = styled.nav`
   /* font-family: "Roboto"; */
   font-size: 1.5rem;
   font-style: normal;
-  /* font-weight: bold; */
+  font-weight: bold;
 
   display: flex;
   justify-content: space-around;
