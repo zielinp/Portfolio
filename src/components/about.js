@@ -5,10 +5,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import styled from "styled-components"
 
 import image from "../image.jpg"
+import image2 from "../image2.jpg"
 
 const PageContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   /* align-items: center; */
@@ -16,17 +17,16 @@ const PageContainer = styled.div`
 `
 
 const AboutContainer = styled.div`
-  /* border: 1px solid black; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 `
 
 const TextContainer = styled.div`
   max-width: 40rem;
   display: flex;
-  /* border: 1px dotted green; */
   margin: 0 2rem 0 2rem;
   flex-wrap: wrap;
   /* justify-content: center;
@@ -42,20 +42,36 @@ const TextContainer = styled.div`
     line-height: 3rem;
   }
   p:first-of-type:hover {
-    color: red;
-    transform: scale(1.1);
+    transform: scale(1.2);
+    transition: transform 0.15s linear;
+  }
+
+  p:nth-of-type(2) {
+    margin-bottom: 1rem;
   }
 `
+
 const ImageContainer = styled.div`
   height: 24rem;
   width: 18rem;
-  /* border: 1px dotted yellow; */
-  border-radius: 10px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  background-image: url(${image});
-  background-size: contain;
+  /* border-radius: 10px; */
+  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
+  /* background-image: url(${image}); */
+  /* background-size: contain;
   background-repeat: no-repeat;
-  background-position-y: center;
+  background-position-y: center; */
+  img {
+    position: absolute;
+    left: 0;
+    height: 24rem;
+    width: 18rem;
+    border-radius: 10px;
+    transition: opacity 1.5s ease-in-out;
+
+    :nth-of-type(2):hover {
+      opacity: 0;
+    }
+  }
 `
 function About(props) {
   const du = React.createRef()
@@ -93,7 +109,10 @@ function About(props) {
     <>
       <PageContainer ref={du}>
         <AboutContainer>
-          <ImageContainer></ImageContainer>
+          <ImageContainer>
+            <img src={image2}></img>
+            <img src={image}></img>
+          </ImageContainer>
           <TextContainer>
             <p>Hello!</p>
             <p>

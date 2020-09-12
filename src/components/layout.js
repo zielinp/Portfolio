@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     /* background-color: yellow; */
     /* background-image: url(${tlo}); */
     background-size:contain;
-    background-repeat: no-repeat;
+    /* background-repeat: repeat; */
     overflow-x: hidden;
   }
   h1,h2,h3,h4,h5,h6,p,span {

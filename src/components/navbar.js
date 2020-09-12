@@ -11,7 +11,7 @@ const StyledNav = styled.nav`
   /* background-color: red; */
   z-index: 2;
   /* font-family: "Roboto"; */
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: bold;
 
