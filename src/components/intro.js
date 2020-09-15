@@ -11,7 +11,7 @@ const Frame = styled.div`
   max-width: 100%;
   margin: 0;
   flex-grow: 1;
-  min-height: 100vh;
+  height: 100vh;
   background-image: url(${frame});
   background-size: contain;
   background-repeat: no-repeat;
@@ -25,7 +25,7 @@ const Frame2 = styled.div`
   /* width: 100%;
   height: 100vh; */
   flex-grow: 1;
-  min-height: 100vh;
+  height: 100vh;
   background-image: url(${frame2});
   background-size: contain;
   background-repeat: no-repeat;
@@ -54,9 +54,10 @@ const PageContainer = styled.div`
   justify-content: center;
   border: 1px solid black; * */
   overflow: hidden;
+  /* border: 1px solid blue; */
 `
 
-function GSAPComponent(props) {
+function Intro(props) {
   const frame = React.createRef()
   const frame2 = React.createRef()
   const d = React.createRef()
@@ -70,20 +71,19 @@ function GSAPComponent(props) {
     gsap.registerPlugin(ScrollTrigger)
 
     tl.to(frame.current, {
-      xPercent: -5,
-      yPercent: -5,
+      xPercent: -3,
+      yPercent: -3,
       scale: 3,
       opacity: 0,
     })
     tl.to(
       frame2.current,
 
-      { xPercent: 5, yPercent: 5, scale: 3, opacity: 0 },
+      { xPercent: 3, yPercent: 3, scale: 3, opacity: 0 },
       0
     )
     tl.to(
       title.current,
-
       {
         opacity: 0,
         scale: 2,
@@ -95,12 +95,12 @@ function GSAPComponent(props) {
       animation: tl,
       trigger: d.current,
       start: "top top",
-      end: "+=2500",
+      end: "+=1800",
       scrub: 0.5,
       pin: true,
-      anticipatePin: 0,
-      markers: true,
-      pinSpacing: true,
+      // anticipatePin: 0,
+      // markers: true,
+      // pinSpacing: true,
     })
   }, [frame, frame2, d, title])
 
@@ -118,4 +118,4 @@ function GSAPComponent(props) {
   )
 }
 
-export default GSAPComponent
+export default Intro

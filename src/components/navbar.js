@@ -19,7 +19,7 @@ const StyledNav = styled.nav`
   justify-content: space-around;
   align-items: center;
   a {
-    text-decoration: none;
+    text-decoration: none !important;
     color: #e5e5e5;
   }
   a:hover {
@@ -31,7 +31,7 @@ const StyledNav = styled.nav`
 const Navbar = () => (
   <>
     <StyledNav>
-      <Link to="/about">About me</Link>
+      <Link to="/">About me</Link>
       <Link to="/projects">Projects</Link>
       <Link to="/skills">Skills</Link>
       <Link to="/contact">Contact</Link>

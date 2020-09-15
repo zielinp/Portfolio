@@ -73,47 +73,48 @@ const ImageContainer = styled.div`
     }
   }
 `
-function About(props) {
-  const du = React.createRef()
 
-  //   gsap.defaults({ ease: "none", duration: 7 })
-  gsap.defaults({ ease: "none" })
+function About(props) {
+  const page_container = React.createRef()
+  const text_container = React.createRef()
+  const image_container = React.createRef()
   const tl = gsap.timeline()
+
+  gsap.defaults({ ease: "none" })
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
-    // tl.fromTo(
-    //   du.current,
-    //   1,
-    //   { y: "+=100", opacity: 0, scale: 0.5 },
-    //   {
-    //     y: "0",
-    //     opacity: 1,
-    //     stagger: 0.2,
-    //     duration: 1,
-    //     ease: "easeInOut",
-    //     scale: 5,
-    //   }
-    // )
+    tl.fromTo(
+      [text_container.current, image_container.current],
+      { y: "+=100", opacity: 0 },
+      { y: 0, opacity: 1, ease: "easeInOut" },
+      0
+    )
+    tl.to([text_container.current, image_container.current], {
+      y: "-=200",
+      opacity: 0,
+    })
 
-    // ScrollTrigger.create({
-    //   animation: tl,
-    //   trigger: du.current,
-    //   start: "top top",
-    //   end: "+=1000",
-    // })
-  }, [du])
+    ScrollTrigger.create({
+      animation: tl,
+      trigger: page_container.current,
+      start: "top 155%", //top 25%
+      end: "145%", //55%
+      // markers: true,
+      scrub: 0.5,
+    })
+  }, [page_container, text_container, image_container])
 
   return (
     <>
-      <PageContainer ref={du}>
+      <PageContainer ref={page_container}>
         <AboutContainer>
-          <ImageContainer>
+          <ImageContainer ref={image_container}>
             <img src={image2}></img>
             <img src={image}></img>
           </ImageContainer>
-          <TextContainer>
+          <TextContainer ref={text_container}>
             <p>Hello!</p>
             <p>
               My name is Paulina. I graduated from Automation and Robotics at
