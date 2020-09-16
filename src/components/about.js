@@ -27,7 +27,7 @@ const AboutContainer = styled.div`
 const TextContainer = styled.div`
   max-width: 40rem;
   display: flex;
-  margin: 0 2rem 0 2rem;
+  margin: 0 3rem 0 3rem;
   flex-wrap: wrap;
   /* justify-content: center;
   align-items: center; */
@@ -38,16 +38,17 @@ const TextContainer = styled.div`
     /* font-weight: bold; */
   }
   p:first-of-type {
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 3rem;
-  }
-  p:first-of-type:hover {
-    transform: scale(1.2);
-    transition: transform 0.15s linear;
+    margin-bottom: 1rem;
   }
 
   p:nth-of-type(2) {
     margin-bottom: 1rem;
+    padding-right: 2rem;
+  }
+  p:nth-of-type(3) {
+    padding-right: 2rem;
   }
 `
 
@@ -122,13 +123,11 @@ function About(props) {
               frontend programming. I really like getting to know new
               technologies, I enjoy learning and watching my progress. I have my
               first commercial projects behind me, but I would like to spread my
-              wings and set off on a beautiful cruise like in a song by
-              Krawczyk.
+              wings and create the highest quality websites.
             </p>{" "}
             <p>
               In my free time, I train amateur powerlifting and spend time in
-              nature with my dog, a charming mongrel that resembles a miniature
-              version of the Old German Shepherd Dog.
+              nature with my dog, a charming mongrel called Luna.
             </p>
           </TextContainer>
         </AboutContainer>

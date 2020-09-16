@@ -1,7 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import rgb_game from "../rgb_game.jpg"
-import tlo from "../tlo.jpg"
 
 const StyledSlide = styled.div`
   display: flex;
@@ -13,9 +11,11 @@ const StyledSlide = styled.div`
   padding: 2rem;
 `
 
-const ImageBox = styled.div`
+const ImageBox = styled.div.attrs(props => ({
+  image: props.image,
+}))`
   background-color: white;
-  background-image: url(${tlo});
+  background-image: url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -27,7 +27,21 @@ const ImageBox = styled.div`
 `
 
 const TextBox = styled.div`
-  background-color: #c5c5c5;
+  /* background-color: #c5c5c5; */
+
+  background-color: #e4e4e1;
+  background-image: radial-gradient(
+      at left center,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(0, 0, 0, 0.03) 100%
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(143, 152, 157, 0.6) 100%
+    );
+  background-blend-mode: normal, multiply;
+
   padding: 2rem;
   width: 30rem;
   height: 28rem;
@@ -99,7 +113,7 @@ const Technologies = styled.div`
   p {
     color: black;
     margin: 0;
-    margin-bottom: 1rem;
+    line-height: 1.5rem;
   }
 
   p:first-of-type {
@@ -112,6 +126,11 @@ const DemoURL = styled.a`
   text-decoration: underline;
   margin-bottom: 1rem;
   color: black;
+  min-width: 104.5px;
+  :hover {
+    transform: scale(1.1);
+    color: black;
+  }
 `
 
 const GithubURL = styled.a`
@@ -119,10 +138,15 @@ const GithubURL = styled.a`
   text-decoration: underline;
   margin-bottom: 1rem;
   color: black;
+  min-width: 104.5px;
+  :hover {
+    color: black;
+    transform: scale(1.1);
+  }
 `
 
 function Slide({
-  titile,
+  title,
   desc,
   technologies,
   githubURL,
@@ -133,35 +157,24 @@ function Slide({
   return (
     <>
       <StyledSlide>
-        <ImageBox></ImageBox>
+        <ImageBox image={image}></ImageBox>
         <TextBox>
           <Title>
             <span>
-              RGB Guess Game <span></span>
+              {title} <span></span>
             </span>
           </Title>
-
-          <Desc>
-            First game project created as part of learning the basics of
-            JavaScript based on functional programming.
-          </Desc>
-
+          <Desc>{desc}</Desc>
           <div>
             <Technologies>
               <p>Technologies used:</p>
-              <p>CSS, HTML, JavaScript</p>
+              <p>{technologies}</p>
             </Technologies>
             <div>
-              <DemoURL
-                target="_blank"
-                href="https://zielinp.github.io/RGB-Guess-Game/"
-              >
+              <DemoURL target="_blank" href={demoURL}>
                 See the demo
               </DemoURL>
-              <GithubURL
-                target="_blank"
-                href="https://github.com/zielinp/RGB-Guess-Game"
-              >
+              <GithubURL target="_blank" href={githubURL}>
                 See the code
               </GithubURL>
             </div>

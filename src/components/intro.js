@@ -35,6 +35,7 @@ const Frame2 = styled.div`
   margin-top: -100vh;
   overflow: hidden;
 `
+
 const MainText = styled.div`
   color: #e5e5e5;
   font-size: 4rem;
@@ -48,6 +49,7 @@ const MainText = styled.div`
     margin: 0;
   }
 `
+
 const PageContainer = styled.div`
   /* display: flex; */
   /* align-items: center;
@@ -57,11 +59,53 @@ const PageContainer = styled.div`
   /* border: 1px solid blue; */
 `
 
+const MouseScroll = styled.div`
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  span {
+    margin: 0 auto;
+    display: block;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    height: 75px;
+    width: 37px;
+    position: relative;
+    span {
+      position: absolute;
+      background-color: #fff;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: move 4s linear infinite;
+    }
+  }
+
+  @keyframes move {
+    0% {
+      transform: translate(-50%, 10px);
+      opacity: 0;
+    }
+    50% {
+      transform: translate(-50%, 40px);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, 80px);
+      opacity: 0;
+    }
+  }
+`
+
 function Intro(props) {
   const frame = React.createRef()
   const frame2 = React.createRef()
   const d = React.createRef()
   const title = React.createRef()
+  const mouse = React.createRef()
 
   //   gsap.defaults({ ease: "none", duration: 7 })
   gsap.defaults({ ease: "none" })
@@ -91,6 +135,14 @@ function Intro(props) {
       0
     )
 
+    tl.to(
+      mouse.current,
+      {
+        opacity: 0,
+      },
+      0
+    )
+
     ScrollTrigger.create({
       animation: tl,
       trigger: d.current,
@@ -102,7 +154,7 @@ function Intro(props) {
       // markers: true,
       // pinSpacing: true,
     })
-  }, [frame, frame2, d, title])
+  }, [frame, frame2, d, title, mouse])
 
   return (
     <>
@@ -113,6 +165,11 @@ function Intro(props) {
           Hermiona Granger
           <p>Frontend Developer</p>
         </MainText>
+        <MouseScroll ref={mouse}>
+          <span>
+            <span></span>
+          </span>
+        </MouseScroll>
       </PageContainer>
     </>
   )

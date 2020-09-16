@@ -41,7 +41,7 @@ function Video({ videoSrcURL, videoTitle, ...props }) {
       trigger: styled_video.current,
       start: "top 155%", //top 25%
       end: "145%", //55%
-      markers: true,
+      // markers: true,
       scrub: 0.5,
     })
   }, [styled_video, video])

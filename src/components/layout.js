@@ -23,12 +23,10 @@ const GlobalStyle = createGlobalStyle`
     /* background-image: url(${tlo}); */
 
     background-image: linear-gradient(to right, #a3bded 0%, #6991c7 100%);
-
-
-    background-size:contain;
-    background-repeat: no-repeat;
-    overflow-x: hidden;
     
+  }
+  a{
+    font-family: 'Nunito Sans', sans-serif !important; 
   }
   h1,h2,h3,h4,h5,h6,p,span {
     color: var(--textNormal);
