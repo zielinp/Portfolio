@@ -118,8 +118,8 @@ const DemoURL = styled.a`
   text-decoration: none;
   margin-bottom: 1rem;
   color: black;
-  min-width: 125px;
-  padding: 0.5rem 0.5rem;
+
+  padding: 0.5rem 1rem;
   border-radius: 25px;
   transition: transform 0.15s linear;
   :hover {
@@ -135,8 +135,8 @@ const GithubURL = styled.a`
   text-decoration: none;
   margin-bottom: 1rem;
   color: black;
-  min-width: 125px;
-  padding: 0.5rem 0.5rem;
+
+  padding: 0.5rem 1em;
   border-radius: 25px;
   transition: transform 0.15s linear;
   :hover {
@@ -157,7 +157,7 @@ function Slide({
 }) {
   return (
     <>
-      <StyledSlide id="projects">
+      <StyledSlide>
         <ImageBox image={image}></ImageBox>
         <TextBox>
           <Title>

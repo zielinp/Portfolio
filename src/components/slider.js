@@ -16,54 +16,80 @@ import shop from "../shop.jpg"
 function Slider({}) {
   const [index, setIndex] = useState(0)
 
-  const handleSelect = (selectedIndex, e) => {
+  const handleNextButton = (selectedIndex, e) => {
+    if (index === 3) {
+      setIndex(0)
+    } else {
+      setIndex(index + 1)
+    }
+  }
+
+  const handlePrevButton = (selectedIndex, e) => {
+    if (index === 0) {
+      setIndex(3)
+    } else {
+      setIndex(index - 1)
+    }
+  }
+
+  const handleSelectDots = (selectedIndex, e) => {
     setIndex(selectedIndex)
   }
 
   return (
     <>
-      <Carousel interval={null}>
-        <Carousel.Item>
-          <Slide
-            title="Rest Countries API"
-            desc="Are you good at geography? In this app you can find the most important information about the country of your choice. Search by name, filter by regions, check bordering countries, currency and many more."
-            technologies="Gatsby, React, JSX, Rest API"
-            githubURL="https://github.com/zielinp/REST-Countries-API"
-            demoURL="#"
-            image={test}
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Slide
-            title="React Shopping App"
-            desc="Online shopping? Sure! Choose the products, add to the basket and receive an order summary in the e-mail. You can also subscribe to the newsletter or learn more about the store."
-            technologies="React, Redux, Materialize, EmailJS "
-            githubURL="https://github.com/zielinp/RGB-Guess-Game"
-            demoURL="https://zielinp.github.io/RGB-Guess-Game/"
-            image={shop}
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Slide
-            title="Reflex Game"
-            desc="Do you want to feel like in the Wild West? Try to score as many points as possible by hitting the target. You have 60 seconds and 3 lives."
-            technologies="JavaScript, CSS, HTML"
-            githubURL="https://github.com/zielinp/Reflex-Game"
-            demoURL="https://zielinp.github.io/Reflex-Game/"
-            image={reflex_game}
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Slide
-            title="RGB Guess Game"
-            desc="Simple game in which you have 3 tries to guess the RGB value of a drawn color. What will be your best score?"
-            technologies="JavaScript, CSS, Bootstrap, HTML"
-            githubURL="https://github.com/zielinp/RGB-Guess-Game"
-            demoURL="https://zielinp.github.io/RGB-Guess-Game/"
-            image={rgb_game}
-          />
-        </Carousel.Item>
-      </Carousel>
+      <div>
+        <Carousel
+          onSelect={handleSelectDots}
+          id="projects"
+          interval={null}
+          controls={false}
+          activeIndex={index}
+        >
+          <Carousel.Item>
+            <Slide
+              title="Rest Countries API"
+              desc="Are you good at geography? In this app you can find the most important information about the country of your choice. Search by name, filter by regions, check bordering countries, currency and many more."
+              technologies="Gatsby, React, JSX, Rest API"
+              githubURL="https://github.com/zielinp/REST-Countries-API"
+              demoURL="#"
+              image={test}
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Slide
+              title="React Shopping App"
+              desc="Online shopping? Sure! Choose the products, add to the basket and receive an order summary in the e-mail. You can also subscribe to the newsletter or learn more about the store."
+              technologies="React, Redux, Materialize, EmailJS "
+              githubURL="https://github.com/zielinp/RGB-Guess-Game"
+              demoURL="https://zielinp.github.io/RGB-Guess-Game/"
+              image={shop}
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Slide
+              title="Reflex Game"
+              desc="Do you want to feel like in the Wild West? Try to score as many points as possible by hitting the target. You have 60 seconds and 3 lives."
+              technologies="JavaScript, CSS, HTML"
+              githubURL="https://github.com/zielinp/Reflex-Game"
+              demoURL="https://zielinp.github.io/Reflex-Game/"
+              image={reflex_game}
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Slide
+              title="RGB Guess Game"
+              desc="Simple game in which you have 3 tries to guess the RGB value of a drawn color. What will be your best score?"
+              technologies="JavaScript, CSS, Bootstrap, HTML"
+              githubURL="https://github.com/zielinp/RGB-Guess-Game"
+              demoURL="https://zielinp.github.io/RGB-Guess-Game/"
+              image={rgb_game}
+            />
+          </Carousel.Item>
+        </Carousel>
+        {/* <button onClick={handlePrevButton}>PREV</button>
+        <button onClick={handleNextButton}>NEXT</button> */}
+      </div>
     </>
   )
 }
