@@ -47,24 +47,6 @@ const TextBox = styled.div`
   height: 28rem;
   margin-left: -5rem;
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
-  div {
-    margin-top: 2rem;
-    display: flex;
-    padding-left: 5rem;
-    padding-right: 1rem;
-    justify-content: space-between;
-
-    div {
-      padding-left: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    @media only screen and (max-width: 1145px) {
-      padding-left: 0;
-    }
-  }
 
   @media only screen and (max-width: 1145px) {
     margin-left: 0;
@@ -101,7 +83,7 @@ const Desc = styled.p`
   /* text-align: center; */
   padding-left: 5rem;
   padding-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 
   @media only screen and (max-width: 1145px) {
     padding-left: 0;
@@ -109,39 +91,58 @@ const Desc = styled.p`
 `
 
 const Technologies = styled.div`
-  /* text-align: center; */
-  p {
+  padding-left: 5rem;
+  padding-right: 1rem;
+  span {
     color: black;
     margin: 0;
     line-height: 1.5rem;
   }
 
-  p:first-of-type {
+  span:first-of-type {
     font-weight: bold;
   }
 `
 
+const Links = styled.div`
+  margin-top: 1rem;
+  margin-left: 5rem;
+  margin-right: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+`
+
 const DemoURL = styled.a`
   font-weight: bold;
-  text-decoration: underline;
+  border: 1px solid black;
+  text-decoration: none;
   margin-bottom: 1rem;
   color: black;
-  min-width: 104.5px;
+  min-width: 125px;
+  padding: 0.5rem 0.5rem;
+  border-radius: 25px;
+  transition: transform 0.15s linear;
   :hover {
     transform: scale(1.1);
     color: black;
+    text-decoration: none;
   }
 `
 
 const GithubURL = styled.a`
   font-weight: bold;
-  text-decoration: underline;
+  border: 1px solid black;
+  text-decoration: none;
   margin-bottom: 1rem;
   color: black;
-  min-width: 104.5px;
+  min-width: 125px;
+  padding: 0.5rem 0.5rem;
+  border-radius: 25px;
+  transition: transform 0.15s linear;
   :hover {
-    color: black;
     transform: scale(1.1);
+    color: black;
+    text-decoration: none;
   }
 `
 
@@ -156,7 +157,7 @@ function Slide({
 }) {
   return (
     <>
-      <StyledSlide>
+      <StyledSlide id="projects">
         <ImageBox image={image}></ImageBox>
         <TextBox>
           <Title>
@@ -165,20 +166,19 @@ function Slide({
             </span>
           </Title>
           <Desc>{desc}</Desc>
-          <div>
-            <Technologies>
-              <p>Technologies used:</p>
-              <p>{technologies}</p>
-            </Technologies>
-            <div>
-              <DemoURL target="_blank" href={demoURL}>
-                See the demo
-              </DemoURL>
-              <GithubURL target="_blank" href={githubURL}>
-                See the code
-              </GithubURL>
-            </div>
-          </div>
+          <Technologies>
+            <span>Technologies used: </span>
+            <span>{technologies}</span>
+          </Technologies>
+
+          <Links>
+            <DemoURL target="_blank" href={demoURL}>
+              See the demo
+            </DemoURL>
+            <GithubURL target="_blank" href={githubURL}>
+              See the code
+            </GithubURL>
+          </Links>
         </TextBox>
       </StyledSlide>
     </>

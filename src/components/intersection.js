@@ -6,16 +6,19 @@ import styled from "styled-components"
 
 import leaves_right from "../leaves_right2.png"
 
-const PageContainer = styled.div`
+const PageContainer = styled.div.attrs(props => ({
+  image: props.image,
+  position: props.position,
+}))`
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url(${leaves_right});
+  background-image: url(${props => props.image});
   /* background-color: red; */
-  background-position: right;
+  background-position: ${props => props.position};
   background-repeat: no-repeat;
   background-size: contain;
   p {
@@ -25,7 +28,7 @@ const PageContainer = styled.div`
   }
 `
 
-function Intersection({ intersectionText }) {
+function Intersection({ intersectionText, image, position }) {
   const page_container = React.createRef()
   const text = React.createRef()
 
@@ -53,7 +56,7 @@ function Intersection({ intersectionText }) {
   }, [page_container, text])
 
   return (
-    <PageContainer ref={page_container}>
+    <PageContainer image={image} position={position} ref={page_container}>
       <p ref={text}>{intersectionText}</p>
     </PageContainer>
   )

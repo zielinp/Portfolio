@@ -21,6 +21,7 @@ const StyledNav = styled.nav`
   a {
     text-decoration: none !important;
     color: #e5e5e5;
+    transition: transform 0.15s linear;
   }
   a:hover {
     color: white;
@@ -32,9 +33,9 @@ const Navbar = () => (
   <>
     <StyledNav>
       <Link to="/">About me</Link>
-      <Link to="/projects">Projects</Link>
-      <Link to="/skills">Skills</Link>
-      <Link to="/contact">Contact</Link>
+      <Link to="/#projects">Projects</Link>
+      <Link to="/#skills">Skills</Link>
+      <Link to="/#contact">Contact</Link>
     </StyledNav>
   </>
 )

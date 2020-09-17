@@ -39,6 +39,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
+
 function Layout({ children }) {
   return (
     <>

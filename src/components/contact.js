@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import styled from "styled-components"
 
 import marble from "../marble.jpg"
 import frame2 from "../leaves_without_background_cropped2.png"
+import resume from "../Paulina_Zielinska_resume.pdf"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons"
@@ -134,18 +137,50 @@ const Frame2 = styled.div`
   margin-top: -85vh;
   overflow: hidden;
 `
+
 const DIV = styled.div`
   overflow: hidden;
   height: 100vh;
 `
 
 function Contact() {
+  const page_container = React.createRef()
+  const text_container = React.createRef()
+  const image_container = React.createRef()
+  const tl = gsap.timeline()
+
+  gsap.defaults({ ease: "none" })
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    tl.fromTo(
+      [text_container.current, image_container.current],
+      { y: "+=100", opacity: 0 },
+      { y: 0, opacity: 1, ease: "easeInOut" },
+      0
+    )
+    tl.to([text_container.current, image_container.current], {
+      y: "-=200",
+      opacity: 0,
+    })
+
+    ScrollTrigger.create({
+      animation: tl,
+      trigger: page_container.current,
+      start: "top 155%", //top 25%
+      end: "145%", //55%
+      // markers: true,
+      scrub: 0.5,
+    })
+  }, [page_container, text_container, image_container])
+
   return (
     <>
-      <DIV>
+      <DIV id="contact" ref={page_container}>
         <StyledBox>
-          <ContactBox>Get in touch with me</ContactBox>
-          <TextBox>
+          <ContactBox ref={image_container}>Get in touch with me</ContactBox>
+          <TextBox ref={text_container}>
             <p>Paulina Zielińska</p>
             <p>zielinska.paulina@o2.pl</p>
             <p>
@@ -165,7 +200,8 @@ function Contact() {
               </a>
             </div>
             <button>Leave me a message</button>
-            <a href="https://www.linkedin.com/in/zielinp/">
+
+            <a href={resume} download>
               <FontAwesomeIcon icon={faDownload} size="1x" />
               <span> Download my Resume</span>
             </a>
