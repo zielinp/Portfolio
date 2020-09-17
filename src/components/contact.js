@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 import marble from "../marble.jpg"
 import frame2 from "../leaves_without_background_cropped2.png"
-import resume from "../Paulina_Zielinska_resume.pdf"
+// import resume from "../Paulina_Zielinska_resume.pdf"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons"
@@ -200,7 +200,7 @@ function Contact() {
             </div>
             <button>Leave me a message</button>
 
-            <a href={resume} download>
+            <a href={marble} download>
               <FontAwesomeIcon icon={faDownload} size="1x" />
               <span> Download my Resume</span>
             </a>

@@ -33,6 +33,7 @@ const SkillsContainer = styled.div`
   display: flex;
   justify-content: center;
 `
+
 const Col = styled.div`
   min-width: 15rem;
   border: 1px solid black;
