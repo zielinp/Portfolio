@@ -47,7 +47,7 @@ function Video({ videoSrcURL, videoTitle, ...props }) {
   }, [styled_video, video])
 
   return (
-    <StyledVideo ref={styled_video}>
+    <StyledVideo id="about" ref={styled_video}>
       <iframe
         ref={video}
         src={videoSrcURL}

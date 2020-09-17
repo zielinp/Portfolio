@@ -35,8 +35,7 @@ const ContactBox = styled.div`
   font-weight: bold;
   text-align: center;
   padding: 3rem;
- background-image:url(${marble})
-  }
+  background-image: url(${marble});
 `
 
 const TextBox = styled.div`

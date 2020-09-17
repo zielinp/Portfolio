@@ -32,7 +32,7 @@ const StyledNav = styled.nav`
 const Navbar = () => (
   <>
     <StyledNav>
-      <Link to="/">About me</Link>
+      <Link to="/#about">About me</Link>
       <Link to="/#projects">Projects</Link>
       <Link to="/#skills">Skills</Link>
       <Link to="/#contact">Contact</Link>
