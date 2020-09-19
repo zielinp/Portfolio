@@ -329,7 +329,15 @@ function Contact() {
             <div onClick={showText}>
               <FontAwesomeIcon icon={faTimes} size="1x" />
             </div>
-            <form method="post" action="#">
+
+            <form
+              method="post"
+              netlify-honeypot="bot-field"
+              data-netlify="true"
+              name="contact"
+            >
+              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="form-name" value="contact" />
               <input placeholder="Name" type="text" name="name" id="name" />
               <input placeholder="Email" type="email" name="email" id="email" />
               <textarea

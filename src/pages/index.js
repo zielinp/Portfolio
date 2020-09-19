@@ -8,7 +8,6 @@ import Slider from "../components/slider"
 import Intersection from "../components/intersection"
 import Contact from "../components/contact"
 import Skills from "../components/skills"
-import Form from "../components/form"
 
 import leaves_right from "../leaves_right2.png"
 import leaves_left from "../leaves_left2.png"
