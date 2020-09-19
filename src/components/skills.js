@@ -26,7 +26,7 @@ const PageContainer = styled.div`
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 `
 
 const SkillsContainer = styled.div`
@@ -36,19 +36,18 @@ const SkillsContainer = styled.div`
 
 const Col = styled.div`
   min-width: 15rem;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   align-items: center;
   img {
     max-width: 6rem;
     max-height: 6rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin-bottom: 1.5rem;
     transition: transform 0.15s linear;
   }
   img:hover {
-    color: white;
     transform: scale(1.1);
   }
   img:nth-of-type(1) {
@@ -57,10 +56,36 @@ const Col = styled.div`
 `
 
 function Skills() {
+  const page_container = React.createRef()
+  const text = React.createRef()
+
+  gsap.defaults({ ease: "none" })
+  const tl = gsap.timeline()
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    tl.fromTo(
+      text.current,
+      { y: "+=100", opacity: 0 },
+      { y: 0, opacity: 1, ease: "easeInOut" }
+    )
+    tl.to(text.current, { y: "-=200", opacity: 0 })
+
+    ScrollTrigger.create({
+      animation: tl,
+      trigger: page_container.current,
+      start: "top 155%", //top 25%
+      end: "145%", //55%
+      // markers: true,
+      scrub: 0.5,
+    })
+  }, [page_container, text])
+
   return (
     <>
-      <PageContainer id="skills">
-        <SkillsContainer>
+      <PageContainer id="skills" ref={page_container}>
+        <SkillsContainer ref={text}>
           <Col>
             <img src={html}></img>
             <img src={css3}></img>

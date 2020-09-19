@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import tlo from "../tlo.jpg"
 import test from "../test.mp4"
+import test2 from "../test2.mp4"
 import rgb_game from "../rgb_game.jpg"
 import reflex_game from "../reflex_game.jpg"
 import shop from "../shop.jpg"
@@ -31,6 +32,9 @@ function Slider({}) {
       setIndex(index - 1)
     }
   }
+  // const preventFunc = (selectedIndex, e) => {
+  //   e.preventDefault()
+  // }
 
   const handleSelectDots = (selectedIndex, e) => {
     setIndex(selectedIndex)
@@ -43,7 +47,7 @@ function Slider({}) {
           onSelect={handleSelectDots}
           id="projects"
           interval={null}
-          controls={false}
+          controls={true}
           activeIndex={index}
         >
           <Carousel.Item>
@@ -53,7 +57,7 @@ function Slider({}) {
               technologies="Gatsby, React, JSX, Rest API"
               githubURL="https://github.com/zielinp/REST-Countries-API"
               demoURL="#"
-              image={test}
+              video={test}
             />
           </Carousel.Item>
           <Carousel.Item>
@@ -63,7 +67,7 @@ function Slider({}) {
               technologies="React, Redux, Materialize, EmailJS "
               githubURL="https://github.com/zielinp/RGB-Guess-Game"
               demoURL="https://zielinp.github.io/RGB-Guess-Game/"
-              image={shop}
+              video={test}
             />
           </Carousel.Item>
           <Carousel.Item>
@@ -73,7 +77,7 @@ function Slider({}) {
               technologies="JavaScript, CSS, HTML"
               githubURL="https://github.com/zielinp/Reflex-Game"
               demoURL="https://zielinp.github.io/Reflex-Game/"
-              image={reflex_game}
+              video={test2}
             />
           </Carousel.Item>
           <Carousel.Item>
@@ -83,7 +87,7 @@ function Slider({}) {
               technologies="JavaScript, CSS, Bootstrap, HTML"
               githubURL="https://github.com/zielinp/RGB-Guess-Game"
               demoURL="https://zielinp.github.io/RGB-Guess-Game/"
-              image={rgb_game}
+              video={test2}
             />
           </Carousel.Item>
         </Carousel>

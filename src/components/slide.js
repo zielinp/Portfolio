@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import test from "../test.mp4"
 
 const StyledSlide = styled.div`
   display: flex;
@@ -11,16 +12,33 @@ const StyledSlide = styled.div`
   padding: 2rem;
 `
 
-const ImageBox = styled.div.attrs(props => ({
-  image: props.image,
-}))`
+// const ImageBox = styled.div.attrs(props => ({
+//   image: props.image,
+// }))`
+//   background-color: white;
+//   background-image: url(${props => props.image});
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   width: 36rem;
+//   height: 22rem;
+//   border: 7px solid white;
+//   z-index: 2;
+//   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
+// `
+
+const ImageBox = styled.div`
   background-color: white;
   background-image: url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  width: 36rem;
-  height: 22rem;
+
+  video {
+    width: 36rem;
+    height: 22rem;
+  }
+
   border: 7px solid white;
   z-index: 2;
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
@@ -158,7 +176,11 @@ function Slide({
   return (
     <>
       <StyledSlide>
-        <ImageBox image={image}></ImageBox>
+        <ImageBox>
+          <video loop={true} autoPlay>
+            <source src={video} />
+          </video>
+        </ImageBox>
         <TextBox>
           <Title>
             <span>

@@ -140,6 +140,7 @@ const Frame2 = styled.div`
 const DIV = styled.div`
   overflow: hidden;
   height: 100vh;
+  /* // dorobic medi queries  */
 `
 
 function Contact() {
@@ -168,7 +169,7 @@ function Contact() {
       animation: tl,
       trigger: page_container.current,
       start: "top 155%", //top 25%
-      end: "145%", //55%
+      end: "155%", //55%
       // markers: true,
       scrub: 0.5,
     })
