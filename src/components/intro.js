@@ -147,7 +147,7 @@ function Intro(props) {
       animation: tl,
       trigger: d.current,
       start: "top top",
-      end: "+=1800",
+      end: "300%",
       scrub: 0.5,
       pin: true,
       // anticipatePin: 0,

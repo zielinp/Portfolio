@@ -72,7 +72,6 @@ const TextBox = styled.div`
 `
 
 const Title = styled.p`
-  color: #000000;
   font-size: 1.85rem;
   font-weight: bold;
   padding-left: 5rem;
@@ -135,8 +134,8 @@ const DemoURL = styled.a`
   border: 1px solid black;
   text-decoration: none;
   margin-bottom: 1rem;
-  color: black;
-
+  color: var(--textNormal);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 0.5rem 1rem;
   border-radius: 25px;
   transition: transform 0.15s linear;
@@ -152,8 +151,8 @@ const GithubURL = styled.a`
   border: 1px solid black;
   text-decoration: none;
   margin-bottom: 1rem;
-  color: black;
-
+  color: var(--textNormal);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 0.5rem 1em;
   border-radius: 25px;
   transition: transform 0.15s linear;

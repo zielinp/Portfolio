@@ -5,11 +5,11 @@ import tlo from "../tlo.jpg"
 import cloud from "../clouds2.png"
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
   body {
     padding: 0;
     margin: 0;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     --bg: hsl(0, 0%, 98%);
     --boxShadowColor: hsl(0, 0%, 78%);
     --elements: hsl(0, 0%, 100%);
@@ -26,7 +26,8 @@ const GlobalStyle = createGlobalStyle`
     
   }
   a{
-    font-family: 'Nunito Sans', sans-serif !important; 
+    font-family: 'Roboto', sans-serif !important; 
+   
   }
   h1,h2,h3,h4,h5,h6,p,span {
     color: var(--textNormal);

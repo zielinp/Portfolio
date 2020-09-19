@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+import ScrollIndicator from "../components/scrollindicator"
+
 const StyledNav = styled.nav`
   position: fixed;
   top: 0%;
@@ -14,7 +16,6 @@ const StyledNav = styled.nav`
   font-size: 1.25rem;
   font-style: normal;
   font-weight: bold;
-
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -37,6 +38,7 @@ const Navbar = () => (
       <Link to="/#skills">Skills</Link>
       <Link to="/#contact">Contact</Link>
     </StyledNav>
+    {/* <ScrollIndicator></ScrollIndicator> */}
   </>
 )
 
