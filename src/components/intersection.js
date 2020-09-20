@@ -25,6 +25,9 @@ const PageContainer = styled.div.attrs(props => ({
     color: white;
     font-size: 2rem;
     padding: 0 1rem;
+    @media only screen and (max-width: 1000px) {
+      font-size: 1.5rem;
+    }
   }
 `
 

@@ -41,6 +41,24 @@ const ContactBox = styled.div`
   text-align: center;
   padding: 3rem;
   background-image: url(${marble});
+  @media only screen and (max-width: 905px) {
+    margin-bottom: -3rem;
+    /* width: 22rem; */
+    height: 22rem;
+  }
+
+  @media only screen and (max-width: 550px) {
+    width: 18rem;
+    height: 18rem;
+    font-size: 1.75rem;
+    margin-bottom: -3rem;
+  }
+  @media only screen and (max-width: 450px) {
+    width: 16rem;
+    height: 16rem;
+    font-size: 1.75rem;
+    margin-bottom: -3rem;
+  }
 `
 
 const TextBox = styled.div.attrs(props => ({
@@ -67,6 +85,13 @@ const TextBox = styled.div.attrs(props => ({
   align-items: center;
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
   padding-left: 4rem;
+
+  @media only screen and (max-width: 450px) {
+    width: 28rem;
+    height: 22rem;
+    padding-left: 2rem;
+  }
+
   p {
     margin: 0;
     font-size: 1.25rem;
@@ -80,6 +105,10 @@ const TextBox = styled.div.attrs(props => ({
     font-size: 2rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    @media only screen and (max-width: 450px) {
+      font-size: 1.75rem;
+      margin-top: 2rem;
+    }
   }
   p:nth-of-type(2) {
     font-size: 1.25rem;
@@ -139,7 +168,7 @@ const TextBox = styled.div.attrs(props => ({
     }
   }
 
-  @media only screen and (max-width: 1145px) {
+  @media only screen and (max-width: 905px) {
     margin-left: 0;
   }
 `
@@ -163,6 +192,9 @@ const Frame2 = styled.div`
 const DIV = styled.div`
   overflow: hidden;
   height: 100vh;
+  /* @media only screen and (max-width: 905px) {
+    height: 115vh;
+  } */
   /* // dorobic medi queries  */
 `
 
@@ -170,6 +202,9 @@ const StyledForm = styled.div.attrs(props => ({
   display: props.display,
 }))`
   display: ${props => props.display};
+  flex-shrink: 2;
+  justify-content: center;
+  align-items: center;
   margin-left: -5rem;
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
   width: 28rem;
@@ -187,7 +222,19 @@ const StyledForm = styled.div.attrs(props => ({
     );
   background-blend-mode: normal, multiply;
   padding: 4rem;
+  padding-left: 8rem;
   position: relative;
+  @media only screen and (max-width: 905px) {
+    margin-left: 0;
+    /* padding-left: 4rem; */
+    padding: 1rem;
+  }
+
+  @media only screen and (max-width: 450px) {
+    width: 28rem;
+    height: 22rem;
+    padding-top: 3rem;
+  }
 
   div {
     position: absolute;
@@ -206,7 +253,6 @@ const StyledForm = styled.div.attrs(props => ({
   }
 
   form {
-    padding-left: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -263,7 +309,7 @@ function Contact() {
 
   function showForm() {
     setDisplayText("none")
-    setDisplayForm("block")
+    setDisplayForm("flex")
   }
   function showText() {
     setDisplayText("flex")

@@ -43,10 +43,18 @@ const MainText = styled.div`
   top: calc(50vh - 4rem);
   width: 100%;
   text-align: center;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 2.5rem;
+    top: calc(50vh - 2.5rem);
+  }
   p {
     font-size: 2rem;
     color: #e5e5e5;
     margin: 0;
+    @media only screen and (max-width: 500px) {
+      font-size: 1.5rem;
+    }
   }
 `
 
@@ -56,6 +64,7 @@ const PageContainer = styled.div`
   justify-content: center;
   border: 1px solid black; * */
   overflow: hidden;
+  min-height: 100vh;
   /* border: 1px solid blue; */
 `
 

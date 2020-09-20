@@ -25,7 +25,7 @@ const PageContainer = styled.div`
 
 function CustomSlider() {
   return (
-    <PageContainer>
+    <PageContainer id="projects">
       <Slider>
         <div>
           <Slide

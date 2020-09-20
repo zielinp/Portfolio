@@ -19,6 +19,9 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media only screen and (max-width: 500px) {
+    font-size: 1rem;
+  }
   a {
     text-decoration: none !important;
     color: #e5e5e5;

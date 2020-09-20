@@ -29,8 +29,11 @@ const TextContainer = styled.div`
   display: flex;
   margin: 0 3rem 0 3rem;
   flex-wrap: wrap;
-  /* justify-content: center;
-  align-items: center; */
+
+  @media only screen and (max-width: 1000px) {
+    margin: 0 2rem 0 2rem;
+  }
+
   p {
     margin: 0;
     color: white;
@@ -41,26 +44,39 @@ const TextContainer = styled.div`
     font-size: 2rem;
     line-height: 3rem;
     margin-bottom: 1rem;
+    @media only screen and (max-width: 1000px) {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
   }
 
   p:nth-of-type(2) {
     margin-bottom: 1rem;
     padding-right: 2rem;
+    @media only screen and (max-width: 1000px) {
+      padding-right: 0;
+    }
   }
   p:nth-of-type(3) {
     padding-right: 2rem;
+    @media only screen and (max-width: 1000px) {
+      padding-right: 0;
+    }
   }
 `
 
 const ImageContainer = styled.div`
   height: 24rem;
   width: 18rem;
-  /* border-radius: 10px; */
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
-  /* background-image: url(${image}); */
-  /* background-size: contain;
-  background-repeat: no-repeat;
-  background-position-y: center; */
+
+  @media only screen and (max-width: 1000px) {
+    height: 20rem;
+    width: 15rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
   img {
     position: absolute;
     left: 0;
@@ -69,6 +85,10 @@ const ImageContainer = styled.div`
     border-radius: 10px;
     transition: opacity 1.5s ease-in-out;
 
+    @media only screen and (max-width: 1000px) {
+      height: 20rem;
+      width: 15rem;
+    }
     :nth-of-type(2):hover {
       opacity: 0;
     }
