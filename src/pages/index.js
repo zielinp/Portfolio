@@ -4,10 +4,10 @@ import Layout from "../components/layout"
 import Navbar from "../components/navbar"
 import Intro from "../components/intro"
 import About from "../components/about"
-import Slider from "../components/slider"
 import Intersection from "../components/intersection"
 import Contact from "../components/contact"
 import Skills from "../components/skills"
+import CustomSlider from "../components/customslider"
 
 import leaves_right from "../leaves_right2.png"
 import leaves_left from "../leaves_left2.png"
@@ -27,7 +27,7 @@ export default function IndexRoute() {
           image={leaves_left}
           position="left"
         />
-        <Slider></Slider>
+        <CustomSlider></CustomSlider>
         <Intersection
           intersectionText="I am also familiar with technologies like"
           image={leaves_right}

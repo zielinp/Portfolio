@@ -7,15 +7,15 @@ import html from "../images/html.png"
 import css3 from "../images/css3.png"
 import sass from "../images/sass.png"
 import js from "../images/js.png"
-import jq from "../images/jq.png"
 
 import bootstrap from "../images/bootstrap.png"
 import materialize from "../images/materialize.png"
-import react from "../images/react.png"
+import react from "../images/react2.png"
 import gatsby from "../images/gatsby.png"
 
 import yarn from "../images/yarn.png"
 import npm from "../images/npm.png"
+import github from "../images/github.png"
 
 import figma from "../images/figma.png"
 import Xd from "../images/Xd.png"
@@ -26,32 +26,44 @@ const PageContainer = styled.div`
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  /* border: 1px solid black; */
 `
 
 const SkillsContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+
+  flex-grow: 3;
 `
 
 const Col = styled.div`
   min-width: 15rem;
-  /* border: 1px solid black; */
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: 960px) {
+    min-width: 10em;
+  }
   img {
-    max-width: 6rem;
-    max-height: 6rem;
-    /* border: 1px solid black; */
+    max-width: 7rem;
+    max-height: 7rem;
     margin-bottom: 1.5rem;
     transition: transform 0.15s linear;
+    @media only screen and (max-width: 660px) {
+      max-width: 5rem;
+      max-height: 5rem;
+    }
   }
   img:hover {
     transform: scale(1.1);
   }
   img:nth-of-type(1) {
     margin-top: 4rem;
+    @media only screen and (max-width: 960px) {
+      margin-top: 1rem;
+    }
   }
 `
 
@@ -91,7 +103,6 @@ function Skills() {
             <img src={css3}></img>
             <img src={sass}></img>
             <img src={js}></img>
-            <img src={jq}></img>
           </Col>
           <Col>
             <img src={bootstrap}></img>
@@ -102,6 +113,7 @@ function Skills() {
           <Col>
             <img src={yarn}></img>
             <img src={npm}></img>
+            <img src={github}></img>
           </Col>
           <Col>
             <img src={vsc}></img>

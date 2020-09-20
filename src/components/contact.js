@@ -212,6 +212,7 @@ const StyledForm = styled.div.attrs(props => ({
     align-items: center;
 
     input {
+      font-family: "Roboto", sans-serif !important;
       width: 18rem;
       background-color: transparent;
       border: none;
@@ -222,6 +223,7 @@ const StyledForm = styled.div.attrs(props => ({
     }
 
     textarea {
+      font-family: "Roboto", sans-serif !important;
       width: 18rem;
       background-color: transparent;
       border: none;
