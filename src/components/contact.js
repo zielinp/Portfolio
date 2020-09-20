@@ -16,11 +16,28 @@ import {
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons"
 
+const DIV = styled.div`
+  overflow: hidden;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(${frame2});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+  /* @media only screen and (max-width: 905px) {
+    height: 115vh;
+  } */
+  /* // dorobic medi queries  */
+`
+
 const StyledBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   width: 100%;
   flex-wrap: wrap;
   padding: 2rem;
@@ -189,14 +206,14 @@ const Frame2 = styled.div`
   overflow: hidden;
 `
 
-const DIV = styled.div`
-  overflow: hidden;
-  height: 100vh;
-  /* @media only screen and (max-width: 905px) {
-    height: 115vh;
-  } */
-  /* // dorobic medi queries  */
-`
+// const DIV = styled.div`
+//   overflow: hidden;
+//   height: 100vh;
+//   /* @media only screen and (max-width: 905px) {
+//     height: 115vh;
+//   } */
+//   /* // dorobic medi queries  */
+// `
 
 const StyledForm = styled.div.attrs(props => ({
   display: props.display,
@@ -402,7 +419,7 @@ function Contact() {
           </StyledForm>
         </StyledBox>
 
-        <Frame2></Frame2>
+        {/* <Frame2></Frame2> */}
       </DIV>
     </>
   )
