@@ -176,7 +176,7 @@ function Slide({
     <>
       <StyledSlide>
         <ImageBox>
-          <video loop={true} autoPlay>
+          <video loop={true} autoPlay muted>
             <source src={video} />
           </video>
         </ImageBox>
