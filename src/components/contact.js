@@ -27,10 +27,6 @@ const DIV = styled.div`
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: bottom;
-  /* @media only screen and (max-width: 905px) {
-    height: 115vh;
-  } */
-  /* // dorobic medi queries  */
 `
 
 const StyledBox = styled.div`
@@ -205,15 +201,6 @@ const Frame2 = styled.div`
   margin-top: -85vh;
   overflow: hidden;
 `
-
-// const DIV = styled.div`
-//   overflow: hidden;
-//   height: 100vh;
-//   /* @media only screen and (max-width: 905px) {
-//     height: 115vh;
-//   } */
-//   /* // dorobic medi queries  */
-// `
 
 const StyledForm = styled.div.attrs(props => ({
   display: props.display,

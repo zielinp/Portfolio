@@ -10,8 +10,10 @@ import styled from "styled-components"
 
 const PageContainer = styled.div`
   height: 100vh;
+
   .slider {
     height: 100%;
+
     .nextButton,
     .previousButton {
       svg {
@@ -26,14 +28,14 @@ const PageContainer = styled.div`
 function CustomSlider() {
   return (
     <PageContainer id="projects">
-      <Slider>
+      <Slider touchDisabled={true}>
         <div>
           <Slide
             title="Rest Countries API"
             desc="Are you good at geography? In this app you can find the most important information about the country of your choice. Search by name, filter by regions, check bordering countries, currency and many more."
             technologies="Gatsby, React, JSX, Rest API"
             githubURL="https://github.com/zielinp/REST-Countries-API"
-            demoURL="#"
+            demoURL="https://zielinp-countries.netlify.app/"
             video={test}
           />
         </div>

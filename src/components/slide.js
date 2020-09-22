@@ -6,10 +6,13 @@ const StyledSlide = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   flex-wrap: wrap;
   padding: 2rem;
+  @media only screen and (max-width: 1145px) {
+    height: auto;
+  }
 `
 
 // const ImageBox = styled.div.attrs(props => ({
@@ -33,10 +36,12 @@ const ImageBox = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  max-width: 40rem;
+  /* margin: 0 1rem; */
 
   video {
-    width: 36rem;
-    height: 22rem;
+    width: 100%;
+    max-height: 24rem;
   }
 
   border: 7px solid white;
@@ -62,12 +67,22 @@ const TextBox = styled.div`
 
   padding: 2rem;
   width: 30rem;
-  height: 28rem;
+  max-height: 28rem;
   margin-left: -5rem;
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
 
   @media only screen and (max-width: 1145px) {
     margin-left: 0;
+    width: 65%;
+  }
+  @media only screen and (max-width: 706px) {
+    width: 100%;
+  }
+  @media only screen and (max-width: 576px) {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
   }
 `
 
@@ -91,7 +106,13 @@ const Title = styled.p`
   }
 
   @media only screen and (max-width: 1145px) {
+    text-align: center;
     padding-left: 0;
+    margin-top: 0rem;
+  }
+  @media only screen and (max-width: 576px) {
+    font-size: 1.25rem;
+    /* margin-top: 0.5rem; */
   }
 `
 
@@ -104,6 +125,11 @@ const Desc = styled.p`
 
   @media only screen and (max-width: 1145px) {
     padding-left: 0;
+    padding-right: 0rem;
+  }
+  @media only screen and (max-width: 576px) {
+    font-size: 1rem;
+    margin-top: 0.5rem;
   }
 `
 
@@ -119,14 +145,35 @@ const Technologies = styled.div`
   span:first-of-type {
     font-weight: bold;
   }
+  @media only screen and (max-width: 1145px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @media only screen and (max-width: 576px) {
+    font-size: 1rem;
+    /* margin-top: 0.5rem; */
+    padding-right: 0;
+  }
 `
 
 const Links = styled.div`
   margin-top: 1rem;
-  margin-left: 5rem;
+  padding-left: 5rem;
   margin-right: 1.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between !important;
+  padding-right: 1rem;
+  @media only screen and (max-width: 1145px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @media only screen and (max-width: 576px) {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-right: 0;
+    padding-right: 0;
+    width: 100%;
+  }
 `
 
 const DemoURL = styled.a`
@@ -136,9 +183,11 @@ const DemoURL = styled.a`
   margin-bottom: 1rem;
   color: var(--textNormal);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 25px;
   transition: transform 0.15s linear;
+  text-align: center;
+
   :hover {
     transform: scale(1.1);
     color: black;
@@ -153,9 +202,10 @@ const GithubURL = styled.a`
   margin-bottom: 1rem;
   color: var(--textNormal);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 0.5rem 1em;
+  padding: 0.5rem 1.5rem;
   border-radius: 25px;
   transition: transform 0.15s linear;
+  text-align: center;
   :hover {
     transform: scale(1.1);
     color: black;
@@ -194,10 +244,10 @@ function Slide({
 
           <Links>
             <DemoURL target="_blank" href={demoURL}>
-              See the demo
+              Demo
             </DemoURL>
             <GithubURL target="_blank" href={githubURL}>
-              See the code
+              Code
             </GithubURL>
           </Links>
         </TextBox>
