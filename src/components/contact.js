@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import styled from "styled-components"
 
 import marble from "../marble.jpg"
-import frame2 from "../leaves_without_background_cropped2.png"
+import frame from "../leaves_without_background_croppedss.png"
 // import resume from "../Paulina_Zielinska_resume.pdf"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -22,7 +22,7 @@ const DIV = styled.div`
   /* justify-content: center; */
   align-items: center;
   min-height: 100vh;
-  background-image: url(${frame2});
+  background-image: url(${frame});
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: right;
@@ -184,22 +184,6 @@ const TextBox = styled.div.attrs(props => ({
   @media only screen and (max-width: 905px) {
     margin-left: 0;
   }
-`
-
-const Frame2 = styled.div`
-  margin: 0;
-  /* width: 100%;
-  height: 100vh; */
-  flex-grow: 1;
-  height: 100vh;
-  background-image: url(${frame2});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position-x: right;
-  background-position-y: bottom;
-  /* background-color: #87aac1; */
-  margin-top: -85vh;
-  overflow: hidden;
 `
 
 const StyledForm = styled.div.attrs(props => ({
@@ -405,8 +389,6 @@ function Contact() {
             </form>
           </StyledForm>
         </StyledBox>
-
-        {/* <Frame2></Frame2> */}
       </DIV>
     </>
   )

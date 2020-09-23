@@ -1,9 +1,6 @@
 import React from "react"
 import { createGlobalStyle } from "styled-components"
 
-import tlo from "../tlo.jpg"
-import cloud from "../clouds2.png"
-
 const GlobalStyle = createGlobalStyle`
   @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
   body {
@@ -16,12 +13,7 @@ const GlobalStyle = createGlobalStyle`
     --textTitle: hsl(200, 15%, 5%);
     --textNormal: hsl(200, 15%, 15%);
     --textInput: hsl(0, 0%, 52%);
-    /* background-color: var(--bg); */
-    /* background-color: #87AAC1 !important;
-    background-image: url(${cloud});  */
-    /* background-color: yellow; */
-    /* background-image: url(${tlo}); */
-
+  
     background-image: linear-gradient(to right, #a3bded 0%, #6991c7 100%);
     
   }

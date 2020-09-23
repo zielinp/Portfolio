@@ -4,11 +4,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import styled from "styled-components"
 
-import leaves_right from "../leaves_right2.png"
+import leaves from "../leaves_leftss.png"
 
 const PageContainer = styled.div.attrs(props => ({
-  image: props.image,
   position: props.position,
+  transform: props.transform,
 }))`
   width: 100%;
   height: 100vh;
@@ -16,22 +16,24 @@ const PageContainer = styled.div.attrs(props => ({
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url(${props => props.image});
+  background-image: url(${leaves});
   /* background-color: red; */
   background-position: ${props => props.position};
+  transform: rotate(${props => props.transform}deg);
   background-repeat: no-repeat;
   background-size: contain;
   p {
     color: white;
     font-size: 2rem;
     padding: 0 1rem;
+    transform: rotate(${props => props.transform}deg);
     @media only screen and (max-width: 1000px) {
       font-size: 1.5rem;
     }
   }
 `
 
-function Intersection({ intersectionText, image, position }) {
+function Intersection({ intersectionText, transform, position }) {
   const page_container = React.createRef()
   const text = React.createRef()
 
@@ -59,7 +61,11 @@ function Intersection({ intersectionText, image, position }) {
   }, [page_container, text])
 
   return (
-    <PageContainer image={image} position={position} ref={page_container}>
+    <PageContainer
+      position={position}
+      transform={transform}
+      ref={page_container}
+    >
       <p ref={text}>{intersectionText}</p>
     </PageContainer>
   )

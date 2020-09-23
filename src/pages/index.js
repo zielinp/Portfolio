@@ -9,9 +9,6 @@ import Contact from "../components/contact"
 import Skills from "../components/skills"
 import CustomSlider from "../components/customslider"
 
-import leaves_right from "../leaves_right2.png"
-import leaves_left from "../leaves_left2.png"
-
 export default function IndexRoute() {
   return (
     <Layout>
@@ -24,20 +21,20 @@ export default function IndexRoute() {
         <About></About>
         <Intersection
           intersectionText="Scroll down to see my projects"
-          image={leaves_left}
           position="left"
+          transform={0}
         />
         <CustomSlider></CustomSlider>
         <Intersection
           intersectionText="I am also familiar with technologies like"
-          image={leaves_right}
-          position="right"
+          position="left"
+          transform={-180}
         />
         <Skills></Skills>
         <Intersection
           intersectionText="Still interested?"
-          image={leaves_left}
           position="left"
+          transform={0}
         />
 
         <Contact></Contact>

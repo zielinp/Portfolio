@@ -4,8 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import styled from "styled-components"
 
-import frame from "../leaves_without_background_cropped.png"
-import frame2 from "../leaves_without_background_cropped2.png"
+import frame from "../leaves_without_background_croppedss.png"
 
 const Frame = styled.div`
   max-width: 100%;
@@ -15,9 +14,9 @@ const Frame = styled.div`
   background-image: url(${frame});
   background-size: contain;
   background-repeat: no-repeat;
-  /* background-color: blue; */
-  background-position-x: left;
+  background-position-x: right;
   overflow: hidden;
+  transform: rotate(180deg);
 `
 
 const Frame2 = styled.div`
@@ -26,12 +25,11 @@ const Frame2 = styled.div`
   height: 100vh; */
   flex-grow: 1;
   height: 100vh;
-  background-image: url(${frame2});
+  background-image: url(${frame});
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: bottom;
-  /* background-color: #87aac1; */
   margin-top: -100vh;
   overflow: hidden;
 `
