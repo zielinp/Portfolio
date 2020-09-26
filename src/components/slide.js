@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import test from "../test.mp4"
 
 const StyledSlide = styled.div`
   display: flex;

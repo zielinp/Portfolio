@@ -3,8 +3,10 @@ import Slider from "react-animated-slider"
 import Slide from "./slide"
 import "react-animated-slider/build/horizontal.css"
 
-import test from "../test.mp4"
-import test2 from "../test2.mp4"
+import rgb_video from "../rgb-video.mp4"
+import reflex_video from "../reflex-video.mp4"
+import countries_video from "../countries-video.mp4"
+import shop_video from "../shop-video.mp4"
 
 import styled from "styled-components"
 
@@ -36,7 +38,7 @@ function CustomSlider() {
             technologies="Gatsby, React, JSX, Rest API"
             githubURL="https://github.com/zielinp/REST-Countries-API"
             demoURL="https://zielinp-countries.netlify.app/"
-            video={test}
+            video={countries_video}
           />
         </div>
         <div>
@@ -44,9 +46,9 @@ function CustomSlider() {
             title="React Shopping App"
             desc="Online shopping? Sure! Choose the products, add to the basket and receive an order summary in the e-mail. You can also subscribe to the newsletter or learn more about the store."
             technologies="React, Redux, Materialize, EmailJS "
-            githubURL="https://github.com/zielinp/RGB-Guess-Game"
-            demoURL="https://zielinp.github.io/RGB-Guess-Game/"
-            video={test}
+            githubURL="https://github.com/zielinp/React-Shopping-App"
+            demoURL="https://zielinp.github.io/React-Shopping-App/"
+            video={shop_video}
           />
         </div>
         <div>
@@ -56,7 +58,7 @@ function CustomSlider() {
             technologies="JavaScript, CSS, HTML"
             githubURL="https://github.com/zielinp/Reflex-Game"
             demoURL="https://zielinp.github.io/Reflex-Game/"
-            video={test2}
+            video={reflex_video}
           />
         </div>
         <div>
@@ -66,7 +68,7 @@ function CustomSlider() {
             technologies="JavaScript, CSS, Bootstrap, HTML"
             githubURL="https://github.com/zielinp/RGB-Guess-Game"
             demoURL="https://zielinp.github.io/RGB-Guess-Game/"
-            video={test2}
+            video={rgb_video}
           />
         </div>
       </Slider>
