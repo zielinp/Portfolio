@@ -16,6 +16,7 @@ const Frame = styled.div`
   background-repeat: no-repeat;
   background-position-x: right;
   overflow: hidden;
+  background-position-y: bottom;
   transform: rotate(180deg);
 `
 

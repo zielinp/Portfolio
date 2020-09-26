@@ -40,7 +40,7 @@ const StyledBox = styled.div`
 `
 
 const ContactBox = styled.div`
-  background-color: white;
+  /* background-color: white; */
   width: 25rem;
   height: 22rem;
   /* border: 7px solid white; */
@@ -77,18 +77,6 @@ const ContactBox = styled.div`
 const TextBox = styled.div.attrs(props => ({
   display: props.display,
 }))`
-  background-color: #e4e4e1;
-  background-image: radial-gradient(
-      at left center,
-      rgba(255, 255, 255, 0.03) 0%,
-      rgba(0, 0, 0, 0.03) 100%
-    ),
-    linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(143, 152, 157, 0.6) 100%
-    );
-  background-blend-mode: normal, multiply;
   padding: 2rem;
   width: 28rem;
   height: 28rem;
@@ -96,8 +84,10 @@ const TextBox = styled.div.attrs(props => ({
   display: ${props => props.display};
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
   padding-left: 4rem;
+  border: 3px solid white;
 
   @media only screen and (max-width: 450px) {
     width: 28rem;
@@ -110,17 +100,16 @@ const TextBox = styled.div.attrs(props => ({
     font-size: 1.25rem;
     transition: transform 0.15s linear;
     :hover {
-      color: black;
       transform: scale(1.1);
     }
   }
   p:nth-of-type(1) {
     font-size: 2rem;
-    margin-top: 2rem;
+
     margin-bottom: 1rem;
     @media only screen and (max-width: 450px) {
       font-size: 1.75rem;
-      margin-top: 2rem;
+      margin-top: 3.5rem;
     }
   }
   p:nth-of-type(2) {
@@ -131,9 +120,6 @@ const TextBox = styled.div.attrs(props => ({
   }
   p:nth-of-type(3) {
     margin-bottom: 1rem;
-    span:hover {
-      color: black;
-    }
   }
   a {
     color: #212529;
@@ -143,14 +129,10 @@ const TextBox = styled.div.attrs(props => ({
     transition: transform 0.15s linear;
     color: var(--textNormal);
     :hover {
-      color: black;
       transform: scale(1.1);
     }
     span {
       color: var(--textNormal);
-      :hover {
-        color: black;
-      }
     }
   }
 
@@ -164,19 +146,18 @@ const TextBox = styled.div.attrs(props => ({
 
   button {
     font-size: 1.25rem;
-    color: #212529;
-    border: 1px solid black;
-    background-color: transparent !important;
+
+    border: 2px solid white;
+    background-color: transparent;
     font-weight: bold;
     padding: 0.5rem 1rem;
     border-radius: 25px;
     margin-bottom: 1rem;
-    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transition: transform 0.15s linear;
+    transition: transform 0.25s linear;
     color: var(--textNormal);
     :hover {
-      color: black;
+      box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+      background-color: rgba(255, 255, 255, 0.25);
       transform: scale(1.05);
     }
   }
@@ -197,18 +178,9 @@ const StyledForm = styled.div.attrs(props => ({
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
   width: 28rem;
   height: 28rem;
-  background-color: #e4e4e1;
-  background-image: radial-gradient(
-      at left center,
-      rgba(255, 255, 255, 0.03) 0%,
-      rgba(0, 0, 0, 0.03) 100%
-    ),
-    linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(143, 152, 157, 0.6) 100%
-    );
-  background-blend-mode: normal, multiply;
+  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
+
+  border: 3px solid white;
   padding: 4rem;
   padding-left: 8rem;
   position: relative;
@@ -225,6 +197,7 @@ const StyledForm = styled.div.attrs(props => ({
   }
 
   div {
+    color: white;
     position: absolute;
     width: 2rem;
     height: 2rem;
@@ -235,7 +208,6 @@ const StyledForm = styled.div.attrs(props => ({
     align-items: center;
     transition: transform 0.15s linear;
     :hover {
-      color: black;
       transform: scale(1.2);
     }
   }
@@ -245,41 +217,56 @@ const StyledForm = styled.div.attrs(props => ({
     flex-direction: column;
     align-items: center;
 
+    @media only screen and (max-width: 450px) {
+      margin-top: 1.5rem;
+    }
+
     input {
       font-family: "Roboto", sans-serif !important;
       width: 18rem;
-      background-color: transparent;
+      background-color: rgba(255, 255, 255, 0.25);
       border: none;
-      border-bottom: 1px solid black;
-      margin-bottom: 1rem;
+      border: 2px solid white;
+      margin-bottom: 1.5rem;
       padding: 0.5rem 1rem;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+      color: white;
+      font-size: 1rem;
+
+      @media only screen and (max-width: 450px) {
+        margin-bottom: 1rem;
+      }
     }
 
     textarea {
       font-family: "Roboto", sans-serif !important;
       width: 18rem;
-      background-color: transparent;
+      background-color: rgba(255, 255, 255, 0.25);
       border: none;
-      border-bottom: 1px solid black;
-      margin-bottom: 1rem;
+      border: 2px solid white;
+      box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+      margin-bottom: 1.5rem;
       padding: 0.5rem 1rem;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: white;
+      @media only screen and (max-width: 450px) {
+        margin-bottom: 1rem;
+      }
     }
 
     button {
       background-color: transparent;
-      border: 1px solid black;
+      border: 2px solid white;
       color: var(--textNormal);
-      font-weight: bold;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       font-weight: bold;
       padding: 0.5rem 1rem;
       border-radius: 25px;
       width: 10rem;
       transition: transform 0.15s linear;
+      font-size: 1rem;
       :hover {
-        color: black;
+        box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+        background-color: rgba(255, 255, 255, 0.25);
+        color: white;
         transform: scale(1.05);
       }
     }

@@ -42,6 +42,7 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <script src="https://bennettfeely.com/ztext/js/ztext.min.js"></script>
       </body>
     </html>
   )

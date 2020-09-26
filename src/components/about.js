@@ -4,16 +4,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import styled from "styled-components"
 
-import image from "../image.jpg"
-import image2 from "../image2.jpg"
+import image from "../image_1.jpg"
+import image2 from "../image_2.jpg"
 
 const PageContainer = styled.div`
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  /* background-color: red; */
 `
 
 const AboutContainer = styled.div`
@@ -38,15 +37,27 @@ const TextContainer = styled.div`
     margin: 0;
     color: white;
     font-size: 1.25rem;
+    line-height: 1.5rem;
     /* font-weight: bold; */
+    text-align: justify;
+
+    @media only screen and (max-width: 426px) {
+      font-size: 1.05rem;
+      line-height: 1.15rem;
+    }
   }
   p:first-of-type {
     font-size: 2rem;
     line-height: 3rem;
     margin-bottom: 1rem;
+
     @media only screen and (max-width: 1000px) {
       font-size: 1.75rem;
       margin-bottom: 0.5rem;
+    }
+    @media only screen and (max-width: 426px) {
+      font-size: 1.5rem;
+      line-height: 1.75rem;
     }
   }
 
@@ -77,6 +88,12 @@ const ImageContainer = styled.div`
     margin-bottom: 1rem;
   }
 
+  @media only screen and (max-width: 426px) {
+    height: 14rem;
+    width: 14rem;
+    margin-bottom: 1rem;
+  }
+
   img {
     position: absolute;
     left: 0;
@@ -88,6 +105,12 @@ const ImageContainer = styled.div`
     @media only screen and (max-width: 1000px) {
       height: 20rem;
       width: 15rem;
+    }
+
+    @media only screen and (max-width: 426px) {
+      height: 14rem;
+      width: 14rem;
+      object-fit: cover;
     }
     :nth-of-type(2):hover {
       opacity: 0;

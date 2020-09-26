@@ -11,13 +11,13 @@ const GlobalStyle = createGlobalStyle`
     --boxShadowColor: hsl(0, 0%, 78%);
     --elements: hsl(0, 0%, 100%);
     --textTitle: hsl(200, 15%, 5%);
-    --textNormal: hsl(200, 15%, 15%);
+    --textNormal: white;
     --textInput: hsl(0, 0%, 52%);
   
     background-image: linear-gradient(to right, #a3bded 0%, #6991c7 100%);
     
   }
-  a{
+  a, p, span{
     font-family: 'Roboto', sans-serif !important; 
    
   }
