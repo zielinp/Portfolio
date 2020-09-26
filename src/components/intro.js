@@ -37,6 +37,7 @@ const Frame2 = styled.div`
 
 const MainText = styled.div`
   color: #e5e5e5;
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
   font-size: 4rem;
   position: absolute;
   top: calc(50vh - 4rem);
@@ -123,22 +124,22 @@ function Intro(props) {
     gsap.registerPlugin(ScrollTrigger)
 
     tl.to(frame.current, {
-      xPercent: -3,
-      yPercent: -3,
+      xPercent: -1,
+      yPercent: -1,
       scale: 3,
-      opacity: 0,
+      opacity: 0.5,
     })
     tl.to(
       frame2.current,
 
-      { xPercent: 3, yPercent: 3, scale: 3, opacity: 0 },
+      { xPercent: 1, yPercent: 1, scale: 3, opacity: 0.5 },
       0
     )
     tl.to(
       title.current,
       {
         opacity: 0,
-        scale: 2,
+        scale: 1.5,
       },
       0
     )
@@ -155,7 +156,7 @@ function Intro(props) {
       animation: tl,
       trigger: d.current,
       start: "top top",
-      end: "300%",
+      end: "200%",
       scrub: 0.5,
       pin: true,
       // anticipatePin: 0,

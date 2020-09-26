@@ -23,7 +23,7 @@ import vsc from "../images/vsc.png"
 
 const PageContainer = styled.div`
   width: 100%;
-  min-height: 100vh;
+  max-height: 100vh;
   display: flex;
   justify-content: center;
 `
@@ -33,7 +33,7 @@ const SkillsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 
-  flex-grow: 3;
+  flex-grow: 2;
 `
 
 const Col = styled.div`
@@ -55,6 +55,11 @@ const Col = styled.div`
       max-width: 5rem;
       max-height: 5rem;
     }
+    @media only screen and (max-width: 425px) {
+      max-width: 4rem;
+      max-height: 4rem;
+      margin-bottom: 1rem;
+    }
   }
   img:hover {
     transform: scale(1.1);
@@ -63,6 +68,9 @@ const Col = styled.div`
     margin-top: 4rem;
     @media only screen and (max-width: 960px) {
       margin-top: 1rem;
+    }
+    @media only screen and (max-width: 425px) {
+      margin-top: 0rem;
     }
   }
 `

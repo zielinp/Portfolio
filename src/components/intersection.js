@@ -30,6 +30,7 @@ const PageContainer = styled.div.attrs(props => ({
     @media only screen and (max-width: 1000px) {
       font-size: 1.5rem;
     }
+    filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
   }
 `
 

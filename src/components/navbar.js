@@ -19,6 +19,8 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
+
   @media only screen and (max-width: 500px) {
     font-size: 1rem;
   }
@@ -30,6 +32,7 @@ const StyledNav = styled.nav`
   a:hover {
     color: white;
     transform: scale(1.1);
+    filter: drop-shadow(0px 8px 8px rgba(255, 255, 255, 0.25));
   }
 `
 
