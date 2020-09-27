@@ -4,21 +4,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import styled from "styled-components"
 
-import image from "../image_1.jpg"
-import image2 from "../image_2.jpg"
-// import leaves from "../leaves_right2.png"
+import image from "../images/image_1.jpg"
+import image2 from "../images/image_2.jpg"
 
 const PageContainer = styled.div`
   width: 100%;
   /* min-height: 100vh; */
   display: flex;
   justify-content: center;
-
-  /* background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right top;  */
-
-  /* align-items: center; */
 `
 
 const AboutContainer = styled.div`
@@ -124,7 +117,7 @@ const ImageContainer = styled.div`
   }
 `
 
-function About(props) {
+function About({ data }) {
   const page_container = React.createRef()
   const text_container = React.createRef()
   const image_container = React.createRef()

@@ -44,7 +44,7 @@ const Navbar = () => (
       <Link to="/#skills">Skills</Link>
       <Link to="/#contact">Contact</Link>
     </StyledNav>
-    {/* <ScrollIndicator></ScrollIndicator> */}
+    <ScrollIndicator></ScrollIndicator>
   </>
 )
 

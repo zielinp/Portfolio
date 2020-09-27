@@ -1,17 +1,45 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
 import styled from "styled-components"
+import { graphql, StaticQuery } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 
-import frame from "../leaves_without_background_croppedss.png"
+const BackgroundSection = ({ className }) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        desktop: file(
+          relativePath: { eq: "leaves_without_background_croppedss.png" }
+        ) {
+          childImageSharp {
+            fluid(quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      // Set ImageData.
+      const imageData = data.desktop.childImageSharp.fluid
+      return (
+        <BackgroundImage
+          // Tag="section"
+          className={className}
+          fluid={imageData}
+        ></BackgroundImage>
+      )
+    }}
+  />
+)
 
-const Frame = styled.div`
+const Frame = styled(BackgroundSection)`
   max-width: 100%;
   margin: 0;
   flex-grow: 1;
   height: 100vh;
-  background-image: url(${frame});
+
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: right;
@@ -20,13 +48,13 @@ const Frame = styled.div`
   transform: rotate(180deg);
 `
 
-const Frame2 = styled.div`
+const Frame2 = styled(BackgroundSection)`
   margin: 0;
   /* width: 100%;
   height: 100vh; */
   flex-grow: 1;
   height: 100vh;
-  background-image: url(${frame});
+
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: right;
@@ -110,6 +138,7 @@ const MouseScroll = styled.div`
 `
 
 function Intro(props) {
+  // const frame = React.createRef()
   const frame = React.createRef()
   const frame2 = React.createRef()
   const d = React.createRef()
@@ -168,8 +197,13 @@ function Intro(props) {
   return (
     <>
       <PageContainer ref={d}>
-        <Frame ref={frame}></Frame>
-        <Frame2 ref={frame2}></Frame2>
+        <div ref={frame}>
+          <Frame></Frame>
+        </div>
+        <div ref={frame2}>
+          <Frame2></Frame2>
+        </div>
+
         <MainText ref={title}>
           Hermiona Granger
           <p>Frontend Developer</p>

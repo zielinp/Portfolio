@@ -4,9 +4,35 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import styled from "styled-components"
 
-import leaves from "../leaves_leftss.png"
+import { graphql, StaticQuery } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 
-const PageContainer = styled.div.attrs(props => ({
+const BackgroundSection = ({ className, children }) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        desktop: file(relativePath: { eq: "leaves_leftss.png" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      // Set ImageData.
+      const imageData = data.desktop.childImageSharp.fluid
+      return (
+        <BackgroundImage Tag="section" className={className} fluid={imageData}>
+          {children}
+        </BackgroundImage>
+      )
+    }}
+  />
+)
+
+const PageContainer = styled(BackgroundSection).attrs(props => ({
   position: props.position,
   transform: props.transform,
 }))`
@@ -16,8 +42,6 @@ const PageContainer = styled.div.attrs(props => ({
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url(${leaves});
-  /* background-color: red; */
   background-position: ${props => props.position};
   transform: rotate(${props => props.transform}deg);
   background-repeat: no-repeat;
@@ -25,7 +49,6 @@ const PageContainer = styled.div.attrs(props => ({
 
   @media only screen and (max-width: 425px) {
     height: 75vh;
-    border: 1px solid black;
   }
 
   p {

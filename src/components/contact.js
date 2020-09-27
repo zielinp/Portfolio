@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { graphql, StaticQuery } from "gatsby"
 import styled from "styled-components"
 
+import BackgroundImage from "gatsby-background-image"
+
 import marble from "../marble.jpg"
-import frame from "../leaves_without_background_croppedss.png"
 // import resume from "../Paulina_Zielinska_resume.pdf"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -16,13 +18,43 @@ import {
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons"
 
-const DIV = styled.div`
+const BackgroundSection = ({ children, className }) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        desktop: file(
+          relativePath: { eq: "leaves_without_background_croppedss.png" }
+        ) {
+          childImageSharp {
+            fluid(quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      // Set ImageData.
+      const imageData = data.desktop.childImageSharp.fluid
+      return (
+        <BackgroundImage
+          // Tag="section"
+          className={className}
+          fluid={imageData}
+        >
+          {children}
+        </BackgroundImage>
+      )
+    }}
+  />
+)
+
+const DIV = styled(BackgroundSection)`
   overflow: hidden;
   display: flex;
   /* justify-content: center; */
   align-items: center;
   min-height: 100vh;
-  background-image: url(${frame});
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: right;
@@ -320,64 +352,71 @@ function Contact() {
 
   return (
     <>
-      <DIV id="contact" ref={page_container}>
-        <StyledBox>
-          <ContactBox ref={image_container}>Get in touch with me</ContactBox>
-          <TextBox display={displayText} ref={text_container}>
-            <p>Paulina Zielińska</p>
-            <p>zielinska.paulina@o2.pl</p>
-            <p>
-              {" "}
-              <FontAwesomeIcon icon={faPhone} size="1x" />
-              <span> 503 597 350</span>
-            </p>
-            <div>
-              <a href="https://www.linkedin.com/in/zielinp/" target="_blank">
+      <div id="contact" ref={page_container}>
+        <DIV>
+          <StyledBox>
+            <ContactBox ref={image_container}>Get in touch with me</ContactBox>
+            <TextBox display={displayText} ref={text_container}>
+              <p>Paulina Zielińska</p>
+              <p>zielinska.paulina@o2.pl</p>
+              <p>
                 {" "}
-                <FontAwesomeIcon icon={faLinkedinIn} size="1x" />
-                <span> Linkedin</span>
-              </a>
-              <a href="https://github.com/zielinp" target="_blank">
-                <FontAwesomeIcon icon={faGithub} size="1x" />
-                <span> Github</span>
-              </a>
-            </div>
-            <button onClick={showForm}>Leave me a message</button>
+                <FontAwesomeIcon icon={faPhone} size="1x" />
+                <span> 503 597 350</span>
+              </p>
+              <div>
+                <a href="https://www.linkedin.com/in/zielinp/" target="_blank">
+                  {" "}
+                  <FontAwesomeIcon icon={faLinkedinIn} size="1x" />
+                  <span> Linkedin</span>
+                </a>
+                <a href="https://github.com/zielinp" target="_blank">
+                  <FontAwesomeIcon icon={faGithub} size="1x" />
+                  <span> Github</span>
+                </a>
+              </div>
+              <button onClick={showForm}>Leave me a message</button>
 
-            <a href={marble} download>
-              <FontAwesomeIcon icon={faDownload} size="1x" />
-              <span> Download my Resume</span>
-            </a>
-          </TextBox>
-          <StyledForm display={displayForm}>
-            <div onClick={showText}>
-              <FontAwesomeIcon icon={faTimes} size="1x" />
-            </div>
+              <a href={marble} download>
+                <FontAwesomeIcon icon={faDownload} size="1x" />
+                <span> Download my Resume</span>
+              </a>
+            </TextBox>
+            <StyledForm display={displayForm}>
+              <div onClick={showText}>
+                <FontAwesomeIcon icon={faTimes} size="1x" />
+              </div>
 
-            <form
-              method="post"
-              netlify-honeypot="bot-field"
-              data-netlify="true"
-              name="contact"
-            >
-              <input type="hidden" name="bot-field" />
-              <input type="hidden" name="form-name" value="contact" />
-              <input placeholder="Name" type="text" name="name" id="name" />
-              <input placeholder="Email" type="email" name="email" id="email" />
-              <textarea
-                placeholder="Message"
-                name="message"
-                id="message"
-                rows="5"
-              />
-              <button type="submit">
-                <FontAwesomeIcon icon={faPaperPlane} size="1x" />
-                <span> Send</span>
-              </button>
-            </form>
-          </StyledForm>
-        </StyledBox>
-      </DIV>
+              <form
+                method="post"
+                netlify-honeypot="bot-field"
+                data-netlify="true"
+                name="contact"
+              >
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="form-name" value="contact" />
+                <input placeholder="Name" type="text" name="name" id="name" />
+                <input
+                  placeholder="Email"
+                  type="email"
+                  name="email"
+                  id="email"
+                />
+                <textarea
+                  placeholder="Message"
+                  name="message"
+                  id="message"
+                  rows="5"
+                />
+                <button type="submit">
+                  <FontAwesomeIcon icon={faPaperPlane} size="1x" />
+                  <span> Send</span>
+                </button>
+              </form>
+            </StyledForm>
+          </StyledBox>
+        </DIV>
+      </div>
     </>
   )
 }
