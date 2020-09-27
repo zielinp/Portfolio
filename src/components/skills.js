@@ -23,9 +23,10 @@ import vsc from "../images/vsc.png"
 
 const PageContainer = styled.div`
   width: 100%;
-  max-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 `
 
 const SkillsContainer = styled.div`

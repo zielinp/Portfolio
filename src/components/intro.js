@@ -138,7 +138,7 @@ function Intro(props) {
     tl.to(
       title.current,
       {
-        opacity: 0,
+        opacity: 0.5,
         scale: 1.5,
       },
       0
@@ -156,7 +156,7 @@ function Intro(props) {
       animation: tl,
       trigger: d.current,
       start: "top top",
-      end: "200%",
+      end: "125%",
       scrub: 0.5,
       pin: true,
       // anticipatePin: 0,

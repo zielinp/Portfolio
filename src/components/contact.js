@@ -128,6 +128,7 @@ const TextBox = styled.div.attrs(props => ({
     font-size: 1.25rem;
     transition: transform 0.15s linear;
     color: var(--textNormal);
+    text-align: center;
     :hover {
       transform: scale(1.1);
     }

@@ -22,6 +22,12 @@ const PageContainer = styled.div.attrs(props => ({
   transform: rotate(${props => props.transform}deg);
   background-repeat: no-repeat;
   background-size: contain;
+
+  @media only screen and (max-width: 425px) {
+    height: 75vh;
+    border: 1px solid black;
+  }
+
   p {
     color: white;
     font-size: 2rem;

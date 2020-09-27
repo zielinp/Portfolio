@@ -18,9 +18,19 @@ const PageContainer = styled.div`
   .slider {
     height: 100%;
 
+    div.slide-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .nextButton,
     .previousButton {
       svg {
+        @media only screen and (max-width: 425px) {
+          transform: scale(0.7);
+        }
+
         polygon {
           fill: white;
         }
@@ -67,7 +77,7 @@ function CustomSlider() {
   return (
     <PageContainer id="projects" ref={page_container}>
       <Slider touchDisabled={true} duration={500}>
-        <div ref={slide_1}>
+        <div className="slide-div" ref={slide_1}>
           <Slide
             title="Rest Countries API"
             desc="Are you good at geography? In this app you can find the most important information about the country of your choice. Search by name, filter by regions, check bordering countries, currency and many more."
@@ -77,7 +87,7 @@ function CustomSlider() {
             video={countries_video}
           />
         </div>
-        <div ref={slide_2}>
+        <div className="slide-div" ref={slide_2}>
           <Slide
             title="React Shopping App"
             desc="Online shopping? Sure! Choose the products, add to the basket and receive an order summary in the e-mail. You can also subscribe to the newsletter or learn more about the store."
@@ -87,7 +97,7 @@ function CustomSlider() {
             video={shop_video}
           />
         </div>
-        <div ref={slide_3}>
+        <div className="slide-div" ref={slide_3}>
           <Slide
             title="Reflex Game"
             desc="Do you want to feel like in the Wild West? Try to score as many points as possible by hitting the target. You have 60 seconds and 3 lives."
@@ -97,7 +107,7 @@ function CustomSlider() {
             video={reflex_video}
           />
         </div>
-        <div ref={slide_4}>
+        <div className="slide-div" ref={slide_4}>
           <Slide
             title="RGB Guess Game"
             desc="Simple game in which you have 3 tries to guess the RGB value of a drawn color. What will be your best score?"
