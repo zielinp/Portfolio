@@ -37,7 +37,7 @@ const ScrollIndicator = () => {
     let dotPosition
 
     if (y < (225 / 1025) * height) {
-      dotPosition = -1
+      dotPosition = -5
     } else if ((425 / 1025) * height > y) {
       //about
       dotPosition = 12.5
