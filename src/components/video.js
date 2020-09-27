@@ -10,12 +10,14 @@ const StyledVideo = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
+
   iframe {
     margin: 0 1rem;
     border-radius: 10px;
     filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
     width: 660px;
     height: 370px;
+    overflow: hidden;
   }
 `
 
@@ -57,6 +59,7 @@ function Video({ videoSrcURL, videoTitle, ...props }) {
         webkitallowfullscreen="true"
         mozallowfullscreen="true"
         allowFullScreen
+        // style="overflow:hidden;"
       />
     </StyledVideo>
   )

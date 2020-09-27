@@ -9,8 +9,6 @@ import Contact from "../components/contact"
 import Skills from "../components/skills"
 import CustomSlider from "../components/customslider"
 
-import StyledBackgroundSection from "../components/test"
-
 export default function IndexRoute() {
   return (
     <Layout>
@@ -18,8 +16,8 @@ export default function IndexRoute() {
         <Navbar></Navbar>
 
         <Intro></Intro>
-        {/* <StyledBackgroundSection></StyledBackgroundSection> */}
-        <Video videoSrcURL="https://www.youtube.com/embed/sD9gTAFDq40"></Video>
+
+        <Video videoSrcURL="https://player.vimeo.com/video/462430915"></Video>
         <About></About>
         <Intersection
           intersectionText="Scroll down to see my projects"

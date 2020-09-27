@@ -205,7 +205,7 @@ function Intro(props) {
         </div>
 
         <MainText ref={title}>
-          Hermiona Granger
+          Paulina Zielińska
           <p>Frontend Developer</p>
         </MainText>
         <MouseScroll ref={mouse}>
