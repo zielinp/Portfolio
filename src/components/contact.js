@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { graphql, StaticQuery } from "gatsby"
+import { graphql, useStaticQuery, StaticQuery } from "gatsby"
 import styled from "styled-components"
 
 import BackgroundImage from "gatsby-background-image"
 
 import marble from "../marble.jpg"
-// import resume from "../Paulina_Zielinska_resume.pdf"
+
+import DownloadPdf from "../components/downloadpdf"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons"
@@ -377,10 +378,10 @@ function Contact() {
               </div>
               <button onClick={showForm}>Leave me a message</button>
 
-              <a href={marble} download>
+              <DownloadPdf>
                 <FontAwesomeIcon icon={faDownload} size="1x" />
                 <span> Download my Resume</span>
-              </a>
+              </DownloadPdf>
             </TextBox>
             <StyledForm display={displayForm}>
               <div onClick={showText}>

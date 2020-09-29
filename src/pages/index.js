@@ -9,8 +9,6 @@ import Contact from "../components/contact"
 import Skills from "../components/skills"
 import CustomSlider from "../components/customslider"
 
-import DownloadsPage from "../components/test"
-
 export default function IndexRoute() {
   return (
     <Layout>
@@ -18,8 +16,6 @@ export default function IndexRoute() {
         <Navbar></Navbar>
 
         <Intro></Intro>
-
-        <DownloadsPage></DownloadsPage>
 
         <Video videoSrcURL="https://player.vimeo.com/video/462430915"></Video>
         <About></About>
