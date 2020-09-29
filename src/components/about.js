@@ -111,7 +111,10 @@ const ImageContainer = styled.div`
       width: 14rem;
       object-fit: cover;
     }
-    :nth-of-type(2):hover {
+    :nth-of-type(1) {
+      z-index: 10;
+    }
+    :nth-of-type(1):hover {
       opacity: 0;
     }
   }
@@ -154,18 +157,19 @@ function About({ data }) {
       <PageContainer ref={page_container}>
         <AboutContainer>
           <ImageContainer ref={image_container}>
-            <img src={image2}></img>
             <img src={image}></img>
+            <img src={image2}></img>
           </ImageContainer>
           <TextContainer ref={text_container}>
             <p>Hello!</p>
             <p>
               My name is Paulina. I graduated from Automation and Robotics at
               the Warsaw University of Technology, but my heart was stolen by
-              frontend programming. I really like getting to know new
-              technologies, I enjoy learning and watching my progress. I have my
-              first commercial projects behind me, but I would like to spread my
-              wings and create the highest quality websites.
+              frontend programming. I really like getting to know new web
+              development technologies, I enjoy learning and watching my
+              progress. I was involved in several commercial projects. Now I am
+              in search for great opportunities to use my skills in creating
+              high-quality websites.
             </p>{" "}
             <p>
               In my free time, I train amateur powerlifting and spend time in

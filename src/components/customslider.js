@@ -76,7 +76,7 @@ function CustomSlider() {
 
   return (
     <PageContainer id="projects" ref={page_container}>
-      <Slider touchDisabled={true} duration={500}>
+      <Slider touchDisabled={true} duration={1700}>
         <div className="slide-div" ref={slide_1}>
           <Slide
             title="Rest Countries API"

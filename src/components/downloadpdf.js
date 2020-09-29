@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 const DownloadPdf = ({ children }) => {
   const data = useStaticQuery(graphql`
     {
-      file(relativePath: { eq: "Zielinska_Paulina_CV.pdf" }) {
+      file(relativePath: { eq: "Zielinska_Paulina_Resume.pdf" }) {
         publicURL
         name
       }
