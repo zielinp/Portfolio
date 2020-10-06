@@ -189,6 +189,7 @@ const TextBox = styled.div.attrs(props => ({
     margin-bottom: 1rem;
     transition: transform 0.25s linear;
     color: var(--textNormal);
+    -webkit-appearance: none;
     :hover {
       box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
       background-color: rgba(255, 255, 255, 0.25);
