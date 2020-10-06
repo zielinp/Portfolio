@@ -110,6 +110,7 @@ const ContactBox = styled.div`
 const TextBox = styled.div.attrs(props => ({
   display: props.display,
 }))`
+  -webkit-appearance: none;
   padding: 2rem;
   width: 28rem;
   height: 28rem;
@@ -124,7 +125,7 @@ const TextBox = styled.div.attrs(props => ({
 
   @media only screen and (max-width: 450px) {
     width: 28rem;
-    height: 22rem;
+    height: 23.5rem;
     padding-left: 2rem;
   }
 
@@ -364,7 +365,10 @@ function Contact() {
               <p>
                 {" "}
                 <FontAwesomeIcon icon={faPhone} size="1x" />
-                <span> 503 597 350</span>
+                <span>
+                  {" "}
+                  <a href="tel:+48503597350">+48 503 597 350</a>
+                </span>
               </p>
               <div>
                 <a href="https://www.linkedin.com/in/zielinp/" target="_blank">

@@ -118,6 +118,10 @@ const MouseScroll = styled.div`
       left: 50%;
       transform: translateX(-50%);
       animation: move 4s linear infinite;
+
+      @media only screen and (max-width: 576px) {
+        animation-direction: reverse;
+      }
     }
   }
 

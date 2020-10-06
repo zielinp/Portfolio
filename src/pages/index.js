@@ -32,7 +32,7 @@ export default function IndexRoute() {
         />
         <Skills></Skills>
         <Intersection
-          intersectionText="Still interested?"
+          intersectionText="Interested in learning more about me and my work?"
           position="left"
           transform={0}
         />
